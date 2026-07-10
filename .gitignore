@@ -1,4 +1,5 @@
-frontend/node_modules
-Backend/node_modules
-Adminpanel/node_modules
+node_modules/
+frontend/node_modules/
+Backend/node_modules/
+Adminpanel/node_modules/
 .env
