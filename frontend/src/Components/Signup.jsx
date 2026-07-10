@@ -21,7 +21,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/signup", form);
+      const res = await axios.post("https://blinkit-clone-frontend.onrender.com/signup", form);
       alert(res.data.message);
       navigate("/Login");
     } catch (err) {

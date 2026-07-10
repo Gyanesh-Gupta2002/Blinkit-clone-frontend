@@ -20,7 +20,7 @@ function Login({ setUser }) {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/login", data);
+      const res = await axios.post("https://blinkit-clone-frontend.onrender.com/login", data);
       alert(res.data.message);
       if (res.data.success) {
         setUser(res.data.user);

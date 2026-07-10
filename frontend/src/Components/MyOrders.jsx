@@ -54,7 +54,7 @@ function MyOrders({ user }) {
     }
 
     axios
-      .get(`http://localhost:5000/orders/${user.email}`)
+      .get(`https://blinkit-clone-frontend.onrender.com/orders/${user.email}`)
       .then((res) => {
         setOrders(res.data);
         setLoading(false);

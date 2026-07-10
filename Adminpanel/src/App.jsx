@@ -8,7 +8,7 @@ function App() {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://blinkit-clone-frontend.onrender.com/products")
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   };
@@ -26,10 +26,10 @@ function App() {
 
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/products/${editId}`, form);
+        await axios.put(`https://blinkit-clone-frontend.onrender.com/products/${editId}`, form);
         alert("Product updated!");
       } else {
-        await axios.post("http://localhost:5000/products", form);
+        await axios.post("https://blinkit-clone-frontend.onrender.com/products", form);
         alert("Product added!");
       }
       setForm({ name: "", price: "", image: "" });
@@ -50,7 +50,7 @@ function App() {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/products/${id}`);
+      await axios.delete(`https://blinkit-clone-frontend.onrender.com/products/${id}`);
       fetchProducts();
     } catch (err) {
       console.log(err);

@@ -17,7 +17,7 @@ function Checkout({ cart, setCart, user }) {
 
   if (paymentMethod === "Online") {
     try {
-      const { data } = await axios.post("http://localhost:5000/create-razorpay-order", {
+      const { data } = await axios.post("https://blinkit-clone-frontend.onrender.com/create-razorpay-order", {
         amount: total,
       });
 
@@ -29,7 +29,7 @@ function Checkout({ cart, setCart, user }) {
         description: "Order Payment",
         order_id: data.id,
         handler: async function (response) {
-          const res = await axios.post("http://localhost:5000/orders", {
+          const res = await axios.post("https://blinkit-clone-frontend.onrender.com/orders", {
             user_email: user?.email || "guest",
             items: cart,
             total_price: total,
@@ -55,7 +55,7 @@ function Checkout({ cart, setCart, user }) {
     }
   } else {
     try {
-      const res = await axios.post("http://localhost:5000/orders", {
+      const res = await axios.post("https://blinkit-clone-frontend.onrender.com/orders", {
         user_email: user?.email || "guest",
         items: cart,
         total_price: total,
